@@ -4,10 +4,10 @@ const bodyParser = require("body-parser");
 const port = process.env.PORT || 5000;
 const app = express();
 
+const ObjectID = require("mongoose").ObjectID;
+
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-// const blog_model = require("./blog_schema.js");
 
 // mongoose.connect("mongodb://localhost/blog");
 
@@ -73,6 +73,16 @@ app.post("/", function(req, res) {
   newBlog.save(function(err,savedBlog){
     if(err) res.send(err);
     res.json(savedBlog);
+  })
+});
+
+app.get("/blog/:id",function(req,res){
+  const id = req.params.id;
+  const details = {_id :id}
+
+  Blog.findById(details, function(err,fetchedBlog){
+    if(err) res.send(err);
+    res.json(fetchedBlog);
   })
 });
 
