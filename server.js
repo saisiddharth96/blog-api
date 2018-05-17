@@ -25,7 +25,7 @@ app.use("/uploads", express.static("uploads"));
 
 // mongoose.connect("mongodb://localhost/blog");
 
-mongoose.connect("mongodb://sid:admin@ds223760.mlab.com:23760/blog-api");
+mongoose.connect("mongodb://sid:admin@ds227570.mlab.com:27570/blog");
 
 const db = mongoose.connection;
 
