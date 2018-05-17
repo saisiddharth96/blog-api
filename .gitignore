@@ -1,3 +1,5 @@
 /node_modules
 /initial_setup.js
 /blog_schema.js
+/image_upload.js
+/uploads
