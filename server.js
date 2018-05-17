@@ -23,9 +23,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/uploads", express.static("uploads"));
 
-mongoose.connect("mongodb://localhost/blog");
+// mongoose.connect("mongodb://localhost/blog");
 
-// mongoose.connect("mongodb://sid:admin@ds223760.mlab.com:23760/blog-api");
+mongoose.connect("mongodb://sid:admin@ds223760.mlab.com:23760/blog-api");
 
 const db = mongoose.connection;
 
